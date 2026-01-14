@@ -8,15 +8,15 @@ class Config:
     # Update these paths to your local directories
     # max_val = 1023 # GF2
     max_val = 2047 # QB/WV3
-    train_data_path = "dataset/WV3/train_wv3.h5"
-    train_text_path = "dataset/WV3/train_text_feature.h5"
-    test_data_path = "dataset/WV3/test_wv3_multiExm1.h5"
-    test_text_path = "dataset/WV3/reduce_test_text_feature.h5"
+    train_data_path = "dataset/PanCollection/train_wv3.h5"
+    train_text_path = "dataset/text_feature/WV3/train_text_feature.h5"
+    test_data_path = "dataset/PanCollection/test_wv3_multiExm1.h5"
+    test_text_path = "dataset/text_feature/WV3/reduce_test_text_feature.h5"
     
     # Weight Paths for CLIP/Captioning
-    clip_weights_path = "clipcap/clipcap_weight.pt"
-    gpt2_tokenizer_path = "clipcap/tokenizer"
-    gpt2_model_path = "clipcap/model"
+    clip_weights_path = "dataset/clipcap/clipcap_weight.pt"
+    gpt2_tokenizer_path = "dataset/clipcap/tokenizer"
+    gpt2_model_path = "dataset/clipcap/model"
 
     # --- Save Paths ---
     save_dir = "weights/WV3"
