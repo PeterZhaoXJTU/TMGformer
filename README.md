@@ -1,41 +1,35 @@
-# [Insert Paper Title Here]
+# TMGformer: Text-Modulated Multiscale Guidance Transformer for Pansharpening [TGRS 2026]
 
 <div align="center">
   <!-- 请自行替换作者姓名和谷歌学术链接，如果没有链接可去掉 href 属性 -->
-  <a href="[Link to Author 1]"> [Author Name 1] </a> |
-  <a href="[Link to Author 2]"> [Author Name 2] </a> |
-  <a href="[Link to Author 3]"> [Author Name 3] </a>
+  <a href=https://scholar.google.com/citations?hl=zh-CN&user=TN6Pk14AAAAJ> [Xiangyu Zhao] </a> |
+  <a href=https://scholar.google.com/citations?hl=zh-CN&user=b5KG5awAAAAJ> [Chunxia Zhang] </a> |
+  <a> [Qian Liu] </a> |
+  <a href=https://scholar.google.com/citations?hl=zh-CN&user=1KU88B8AAAAJ> [Kai Sun] </a> |
+  <a href=https://scholar.google.com/citations?hl=zh-CN&user=C9lKEu8AAAAJ> [Junmin Liu*] </a> |
 
-  <!-- 请替换单位名称 -->
   <br>
-  <a>[Institution Name 1] </a>
+  <a>[the School of Mathematics and Statistics, Xi'an Jiaotong University, Xi'an, 710049, China.] </a>
 </div>
 
 <div align="center">
-  <!-- 请替换论文 PDF 链接 -->
-  [[Paper]([Link to Paper PDF])] 
-  [[Code](https://github.com/[YourUsername]/TMGformer)]
+  [[Paper](https://ieeexplore.ieee.org/document/11333372)] 
+  [[Code](https://github.com/PeterZhaoXJTU/TMGformer)]
   [[Data](https://drive.google.com/drive/folders/13QcDi_IxDgg7K5fa8VeAitO3u9HoEN8N?usp=drive_link)]
 </div>
 
 <br>
 
-Official implementation of **TMGformer** for Pansharpening.
+Official implementation of [TMGformer: Text-Modulated Multiscale Guidance Transformer for Pansharpening (TGRS)](https://ieeexplore.ieee.org/document/11333372).
 
-<!-- 请将结果对比图命名为 results.png 放入 assets 文件夹 -->
-<div align="center">
-<img src="assets/results.png" width="800" alt="Results Comparison">
-<p><em>Figure 1: Visual results comparisons on Pansharpening datasets.</em></p>
-</div>
+# Abstract
+Pansharpening, a critical task in remote sensing, aims to fuse panchromatic (PAN) images with low-resolution multispectral (LRMS) images to generate high-resolution multispectral (HRMS) outputs. Existing deep learning methods primarily focus on pixel-level spatial and spectral features, often overlooking the deeper, text-level semantic information that can enhance fusion. To address this limitation, we introduce a novel Text-modulated Multiscale Guidance Transformer (TMGformer). Specifically, we first establish a self-contained workflow to generate text features, eliminating reliance on external Application Programming Interfaces (APIs). Subsequently, we develop a Text-modulated Visual Feature Refinement (TVFR) module that transforms these text features into spectrally compatible and semantically consistent guidance. This guidance is then injected into our Asymmetric Multiscale Fusion (AMF) module to guide the fusion process at multiple scales, effectively addressing the vast variance in the scale of terrestrial objects described in their corresponding texts. Furthermore, we introduce a hybrid text-visual loss function to provide comprehensive supervision. Extensive experiments demonstrate that TMGformer achieves state-of-the-art performance. Notably, on the GaoFen-2 dataset, our method reduces the ERGAS by 5.11\% and the $D_s$ by 16.44\% compared to the second-best competitor. To facilitate future research, we release a new vision-language dataset containing textual descriptions and corresponding text features. The code and dataset are available at: https://github.com/PeterZhaoXJTU/TMGformer.
 
-<!-- 请将架构图命名为 architecture.png 放入 assets 文件夹 -->
 <div align="center">
-<img src="assets/architecture.png" width="800" alt="TMGformer Architecture">
+<img src="flowchart.png" width="800" alt="TMGformer Architecture">
 <p><em>Figure 2: The overall architecture of the proposed TMGformer.</em></p>
 </div>
 
-# News
-**[2026/01/14]**: The training and inference code of TMGformer is released.
 
 # Fast Run
 
@@ -67,38 +61,11 @@ The text feature datasets and necessary CLIP/GPT2 checkpoints are hosted on Goog
 
 **Please download the following files from the Drive:**
 1.  **Text Features**: `train_images_text_feature.h5` and `test_images_text_feature.h5` (for GF2, QB, and WV3).
-2.  **Clipcap Weights**: `clip_weights_path` (e.g., `coco_prefix-009.pt`).
+2.  **Clipcap Weights**: `clip_weights_path`.
 3.  **GPT2 Files**: `gpt2_tokenizer_path` and `gpt2_model_path`.
 
 ### Recommended Directory Structure
 We recommend organizing your data as follows. **Important**: Please update the paths in `config.py` to match your local structure.
-
-<details>
-  <summary>Directory Structure (Click to unfold)</summary>
-<pre><code>
-TMGformer_github
-├── assets/
-│   ├── architecture.png
-│   └── results.png
-├── weight/                 # Training checkpoints will be saved here
-├── data/
-│   ├── PanCollection/      # Image datasets from PanCollection
-│   │   ├── train_gf2.h5
-│   │   ├── test_gf2.h5
-│   │   └── ...
-│   ├── text_features/      # From Google Drive
-│   │   ├── train_images_text_feature.h5
-│   │   └── test_images_text_feature.h5
-│   └── pretrained/         # From Google Drive
-│       ├── coco_prefix-009.pt
-│       ├── tokenizer/
-│       └── gpt2_model/
-├── config.py               # <--- UPDATE PATHS HERE
-├── train.py
-├── requirements.txt
-└── ...
-</code></pre>
-</details>
 
 ## 3. Training
 
@@ -109,23 +76,18 @@ cd ./TMGformer_github
 python train.py
 ```
 
-# Results
-
-You can access the trained models and visual results at [Link to your cloud drive if available].
-
 # Citations
 
 If you find this work useful, please kindly cite our paper:
 
 ```bibtex
 @ARTICLE{TMGformer,
-  author={[Author Names]},
-  journal={[Journal Name]},
-  title={TMGformer: [Full Paper Title]},
+  author={Zhao, Xiangyu and Zhang, Chunxia and Liu, Qian and Sun, Kai and Liu, Junmin},
+  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
+  title={TMGformer: Text-Modulated Multiscale Guidance Transformer for Pansharpening}, 
   year={2026},
   volume={},
   number={},
-  pages={},
-  doi={}
-}
+  pages={1-15},
+  doi={10.1109/TGRS.2026.3651576}}
 ```
