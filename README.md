@@ -21,7 +21,7 @@
 <!-- Links -->
 [[📄 Paper](https://ieeexplore.ieee.org/document/11333372)] 
 [[💻 Code](https://github.com/PeterZhaoXJTU/TMGformer)] 
-[[💾 Data]()]
+[[💾 Data](https://drive.google.com/file/d/1bkPTMfFluXCLBmSEdaYlSS16zAFX96Wh/view?usp=drive_link)]
 
 </div>
 
@@ -70,7 +70,7 @@ We follow the **[Pan-Collection]** benchmark. Please download the H5 format data
 
 ### Text Features & Pre-trained Weights
 The text feature datasets and necessary CLIP/GPT2 checkpoints are hosted on Google Drive.
-- **Download Link**: [[Google Drive]]()
+- **Download Link**: [[Google Drive]](https://drive.google.com/file/d/1bkPTMfFluXCLBmSEdaYlSS16zAFX96Wh/view?usp=drive_link)
 
 **Please download the following files from the Drive:**
 1.  **Text Features**: `train_images_text_feature.h5` and `test_images_text_feature.h5` (for GF2, QB, and WV3).
