@@ -122,8 +122,8 @@ If you find this work useful, please kindly cite our paper:
   journal={IEEE Transactions on Geoscience and Remote Sensing}, 
   title={TMGformer: Text-Modulated Multiscale Guidance Transformer for Pansharpening}, 
   year={2026},
-  volume={},
-  number={},
+  volume={64},
   pages={1-15},
-  doi={10.1109/TGRS.2026.3651576}}
+  doi={10.1109/TGRS.2026.3651576},
+  note = {{A}rt. no. 5400415}}
 ```
